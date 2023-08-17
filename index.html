@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<ul>
+  <li><button>One</button></li>
+  <li><button>Two</button></li>
+  <li><button id="target">Three</button></li>
+  <li><button>Four</button></li>
+  <li><button>Five</button></li>
+</ul>
+
+<p>Button "one" would be expected to be the initial focus target on load, because it's the first focusable element.</p>
+
+<p>However, button "three" has <code>scrollIntoView</code> called on load. In browsers that exhibit this bug, when <kbd>Tab</kbd> is pressed to enter the page, button "Four" is targeted instead.</p>  
+
+<script>
+document.getElementById('target').scrollIntoView();
+</script>
+
